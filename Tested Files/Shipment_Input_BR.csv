@@ -1,0 +1,11 @@
+Shipment Origin,Shipment Destination,Pickup Date,Weight,Cube,Service Type
+ABL,CCI,01-05-2001,44,46,Standardd
+ABL,CGO,01-02-2001,455,25,s
+ABL,CGO,01-04-2001,280,26,Standard
+ABL,CGO,01-05-2001,520,10,Standard
+ABL,CLV,01-04-2001,430,69,Standard
+ABL,CMB,01-03-2001,510,43,Standard
+ABL,CMB,01-04-2001,560,89,Standard
+ABL,CRD,01-01-2001,375,28,Standard
+ABL,ABL,01-02-2001,40,7,Standard
+ABL,ABL,01-03-2001,105,3,Standard

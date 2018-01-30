@@ -1,0 +1,4 @@
+Shipment Origin,Shipment Destination,Pickup Date,Weight,Cube,Service Type,Description
+ABL,CGO,1/2/2001 12:00:00 AM,455,25,Stadard,Invalid service type value;
+ABL,CLL,1/4/2001 12:00:00 AM,430,69,Standard,Invalid destination code;
+CMB,CMB,1/4/2001 12:00:00 AM,560,89,Standad,Origin and Destination cannot be same;Invalid service type value;

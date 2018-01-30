@@ -1,0 +1,95 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationFramework.Web", "ValidationFramework.Web\ValidationFramework.Web.csproj", "{159FBC94-7095-41B1-9AEC-CBD63377915B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationFramework.Services", "ValidationFramework.Services\ValidationFramework.Services.csproj", "{5F5FCC33-DDAF-48C3-B0B6-0FEF8B380B96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationFramework.BusinessEntities", "ValidationFramework.BusinessEntities\ValidationFramework.BusinessEntities.csproj", "{A6E9C0FB-603B-4563-BEE0-47D369B5BDC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationFramework.BusinessLogic", "ValidationFramework.BusinessLogic\ValidationFramework.BusinessLogic.csproj", "{F098EF6D-F832-4B80-8621-DF7C120D6F85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationFramework.Core", "ValidationFramework.Core\ValidationFramework.Core.csproj", "{E19FE0FC-5D82-4D28-8111-9289AB815CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationFramework.BusinessLogic.Tests", "ValidationFramework.BusinessLogic.Tests\ValidationFramework.BusinessLogic.Tests.csproj", "{B163B9EE-F7ED-4888-B87F-1586D8B61B53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationFramework.Models", "ValidationFramework.Models\ValidationFramework.Models.csproj", "{209C4531-9089-4506-9228-5077B0EE9EDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. WebClient", "1. WebClient", "{1DDB90B5-BA76-4DCA-831A-269B38205CC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. BusinessLogic", "3. BusinessLogic", "{C307BF7A-11F4-45EC-BED0-232122BAA210}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. DataAccess", "4. DataAccess", "{AB22FF30-9A87-4E56-BEEE-B31D5EC8AFF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. ServiceInterface", "2. ServiceInterface", "{DDF8CED1-155E-42C0-A21F-ADD964B5AC6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationFramework.DataAccess", "ValidationFramework.DataAccess\ValidationFramework.DataAccess.csproj", "{E1393971-8569-43D1-97D6-A11633C1DDDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Core", "0. Core", "{5F4CB9F8-FB08-45B4-BCF7-9AEA652141CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationFramework.Core.Tests", "ValidationFramework.Core.Tests\ValidationFramework.Core.Tests.csproj", "{7DE70C20-6BED-4C7C-B851-B2CE33086C36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{159FBC94-7095-41B1-9AEC-CBD63377915B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{159FBC94-7095-41B1-9AEC-CBD63377915B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{159FBC94-7095-41B1-9AEC-CBD63377915B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{159FBC94-7095-41B1-9AEC-CBD63377915B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F5FCC33-DDAF-48C3-B0B6-0FEF8B380B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5FCC33-DDAF-48C3-B0B6-0FEF8B380B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5FCC33-DDAF-48C3-B0B6-0FEF8B380B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5FCC33-DDAF-48C3-B0B6-0FEF8B380B96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6E9C0FB-603B-4563-BEE0-47D369B5BDC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E9C0FB-603B-4563-BEE0-47D369B5BDC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E9C0FB-603B-4563-BEE0-47D369B5BDC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E9C0FB-603B-4563-BEE0-47D369B5BDC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F098EF6D-F832-4B80-8621-DF7C120D6F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F098EF6D-F832-4B80-8621-DF7C120D6F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F098EF6D-F832-4B80-8621-DF7C120D6F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F098EF6D-F832-4B80-8621-DF7C120D6F85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E19FE0FC-5D82-4D28-8111-9289AB815CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E19FE0FC-5D82-4D28-8111-9289AB815CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E19FE0FC-5D82-4D28-8111-9289AB815CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E19FE0FC-5D82-4D28-8111-9289AB815CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B163B9EE-F7ED-4888-B87F-1586D8B61B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B163B9EE-F7ED-4888-B87F-1586D8B61B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B163B9EE-F7ED-4888-B87F-1586D8B61B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B163B9EE-F7ED-4888-B87F-1586D8B61B53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{209C4531-9089-4506-9228-5077B0EE9EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{209C4531-9089-4506-9228-5077B0EE9EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{209C4531-9089-4506-9228-5077B0EE9EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{209C4531-9089-4506-9228-5077B0EE9EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1393971-8569-43D1-97D6-A11633C1DDDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1393971-8569-43D1-97D6-A11633C1DDDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1393971-8569-43D1-97D6-A11633C1DDDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1393971-8569-43D1-97D6-A11633C1DDDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE70C20-6BED-4C7C-B851-B2CE33086C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE70C20-6BED-4C7C-B851-B2CE33086C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE70C20-6BED-4C7C-B851-B2CE33086C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE70C20-6BED-4C7C-B851-B2CE33086C36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{159FBC94-7095-41B1-9AEC-CBD63377915B} = {1DDB90B5-BA76-4DCA-831A-269B38205CC7}
+		{5F5FCC33-DDAF-48C3-B0B6-0FEF8B380B96} = {DDF8CED1-155E-42C0-A21F-ADD964B5AC6D}
+		{A6E9C0FB-603B-4563-BEE0-47D369B5BDC4} = {C307BF7A-11F4-45EC-BED0-232122BAA210}
+		{F098EF6D-F832-4B80-8621-DF7C120D6F85} = {C307BF7A-11F4-45EC-BED0-232122BAA210}
+		{E19FE0FC-5D82-4D28-8111-9289AB815CCA} = {5F4CB9F8-FB08-45B4-BCF7-9AEA652141CD}
+		{B163B9EE-F7ED-4888-B87F-1586D8B61B53} = {C307BF7A-11F4-45EC-BED0-232122BAA210}
+		{209C4531-9089-4506-9228-5077B0EE9EDA} = {1DDB90B5-BA76-4DCA-831A-269B38205CC7}
+		{E1393971-8569-43D1-97D6-A11633C1DDDE} = {AB22FF30-9A87-4E56-BEEE-B31D5EC8AFF1}
+		{7DE70C20-6BED-4C7C-B851-B2CE33086C36} = {5F4CB9F8-FB08-45B4-BCF7-9AEA652141CD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+		SolutionGuid = {F024A824-5B26-4668-A2DC-D5E5F481AEA5}
+	EndGlobalSection
+EndGlobal

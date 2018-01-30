@@ -1,0 +1,152 @@
+﻿<div class="row">
+    <style type="text/css">
+        #dropZone {
+            background: gray;
+            border: black dashed 3px;
+            padding: 50px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            var uploadResponse = { files:[]};
+            $('#dropZone').filedrop({
+                url: '@Url.Action("UploadFiles")',
+                paramname: 'files',
+                maxFiles: 10,
+                dragOver: function () {
+                    $('#dropZone').css('background', 'blue');
+                },
+                dragLeave: function () {
+                    $('#dropZone').css('background', 'gray');
+                },
+                drop: function () {
+                    $('#dropZone').css('background', 'gray');
+                },
+                afterAll: function () {
+                    $('#dropZone').html('The file(s) have been uploaded successfully!');
+                },
+                uploadFinished: function (i, file, response, time) {
+                    $('#uploadResult').append('<li>' + file.name + ' (folder path: ' + response.files[0] + ')' + '</li>');
+                    uploadResponse.files = uploadResponse.files.concat(response.files);
+                }
+            });
+
+            $("#processFiles").click(function (e) {
+                if (uploadResponse.files.length > 0) {
+                    $.post('api/file', { FilePaths: uploadResponse.files })
+                        .success(function (data) {
+                            $.alert({
+                                title: 'Success!',
+                                content: getSuccessContent(data.fileResults),
+                                columnClass: 'medium'
+                            });
+                            
+                            $('#uploadResult').html('');
+                            $('#dropZone').html('Drop your files here');
+                            uploadResponse = { files: []};
+                        })
+                        .fail(function (data) {
+                            $.alert({
+                                title: 'Error!',
+                                content: 'file/s processing failed, try processing again!',
+                            });
+                        });
+                }
+            });
+
+            $(document).on('click', '.continue-button', function () {
+                var row = $(this).parent().parent();
+                var fileResult = JSON.parse($(row).attr("fileresult"));
+                var apiMethod = fileResult.typeOfError == 'Business Validation' ? 'revalidate/business' : 'revalidate/format';
+                $.post('api/' + apiMethod, { filePaths: [fileResult.filePath] })
+                     .success(function (data) {
+                         var rowToBeAdded = getTableRow(data.fileResults[0]);
+                         $(rowToBeAdded).attr("fileresult", JSON.stringify(data.fileResults[0]));
+                         $(row).replaceWith(rowToBeAdded);
+                      })
+                     .fail(function (data) {
+                         $.alert({
+                             title: 'Error!',
+                             content: 'file processing failed, try processing again!',
+                         });
+                     });
+            });
+
+            $(document).on('click', '.file-download', function (e) {
+                var filePaths = [];
+                $(this).parent().find("tr").each(function () {
+                    var objString = $(this).attr("fileresult");
+                    if (objString) {
+                        var filePathObject = JSON.parse(objString);
+                        filePaths.push(filePathObject.filePath);
+                    }
+                });
+                $.fileDownload("api/file/download", {
+                    httpMethod: 'POST',
+                    data: {filePaths: filePaths},
+                    successCallback: function (url) {
+
+                    }
+                });
+                e.preventDefault();
+            });
+
+            function getSuccessContent(fileResults) {
+
+                var containerDiv = $("<div/>");
+
+                var table = $('<table border="1"/>');
+                var headerRow = $("<tr/>");
+                headerRow.append($("<th/>").text("File Name"));
+                headerRow.append($("<th/>").text("Type of Error"));
+                headerRow.append($("<th/>").text("Number of Valid Rows"));
+                headerRow.append($("<th/>").text("Number of Error Rows"));
+                headerRow.append($("<th/>").text("Action"));
+                table.append(headerRow);
+                if (fileResults && fileResults.length > 0) {
+                   
+                    $.each(fileResults, function (rowIndex, fileResult) {
+                        var row = getTableRow(fileResult);
+                        table.append(row);
+                        $(row).attr("fileresult", JSON.stringify(fileResult));
+                    });
+                    
+                }
+                containerDiv.append(table);
+                containerDiv.append($("<br/>"));
+                containerDiv.append($("<a/>").text("Click to Download Zip file").attr("href", "#").attr("class", "file-download"));
+                return containerDiv.prop('outerHTML');
+            }
+
+            function getTableRow(fileResult) {
+                var row = $("<tr/>");
+                row.append($("<td/>").text(fileResult.fileName));
+                row.append($("<td/>").text(fileResult.typeOfError));
+                row.append($("<td/>").text(fileResult.numberOfValidRows));
+                row.append($("<td/>").text(fileResult.numberOfErrorRows));
+                if (fileResult.typeOfError != "No Error") {
+                    var button = $('<button/>', {
+                        text: 'Omit & Continue',
+                        "class":"continue-button"
+                    });
+                    row.append($("<td/>").append(button));
+                } else {
+                    row.append($("<td/>").text(""));
+                }
+                return row;
+            }
+        });
+    </script>
+
+    <h2>Drag & Drop Upload</h2>
+    <h5>Darg one or more files in below area and note down folder paths from 'Uploaded Files:' section</h5>
+    <h5>Web service call to process uploaded files will start after you click on button 'Process Uploaded File/s' </h5>
+    <div id="dropZone">Drop your files here</div>
+    <br />
+    Uploaded Files:
+    <ul id="uploadResult"></ul>
+    <input id="processFiles" type="button" value="Process Uploaded File/s" />
+</div>
+
